@@ -11,25 +11,25 @@ services:
         ports:
         - "8009:8000"
         networks:
-        - redis
-    redis:  
-      image: redis:latest
-      user: root
-      restart: always
-      ports:
-        - 6379:6379
-      volumes:
-        - ./conf:/opt/local/bitnami/redis/etc
-      environment:
-        - ALLOW_EMPTY_PASSWORD=yes
-      networks:
-        - redis
+        - demo
+    # redis:  
+    #   image: redis:latest
+    #   user: root
+    #   restart: always
+    #   ports:
+    #     - 6379:6379
+    #   volumes:
+    #     - ./conf:/opt/local/bitnami/redis/etc
+    #   environment:
+    #     - ALLOW_EMPTY_PASSWORD=yes
+    #   networks:
+    #     - redis
 
 # networks:
 #   redis:
 #     external:
 #       name: redis
 networks:
-  redis:
-    name: redis
+  demo:
+    name: demo
     driver: bridge
